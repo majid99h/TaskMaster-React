@@ -1,9 +1,9 @@
-import { Breadcrumb, Layout, theme } from 'antd';
-import { Route, Routes } from 'react-router-dom';
-import NavBar from './component/layout/navbar';
-import Home from './pages/home';
-import Project from './pages/project';
-import CreateProject from './component/project/project-create';
+import { Breadcrumb, Layout, theme } from "antd";
+import { Route, Routes } from "react-router-dom";
+import NavBar from "./component/layout/navbar";
+import Home from "./pages/home";
+import Project from "./pages/project";
+import CreateProject from "./component/project/project-create";
 
 const { Content, Footer } = Layout;
 function App() {
@@ -13,7 +13,7 @@ function App() {
   return (
     <Layout
       style={{
-        minHeight: '100vh',
+        minHeight: "100vh",
       }}
     >
       <NavBar />
@@ -21,16 +21,18 @@ function App() {
       <Layout>
         <Content
           style={{
-            margin: '0 16px',
+            margin: "0 16px",
           }}
         >
           <Breadcrumb
             style={{
-              margin: '16px 0',
+              margin: "16px 0",
             }}
           >
-            <Breadcrumb.Item>User</Breadcrumb.Item>
-            <Breadcrumb.Item>Bill</Breadcrumb.Item>
+            <Breadcrumb.Item>Home</Breadcrumb.Item>
+            <Breadcrumb.Separator>:</Breadcrumb.Separator>
+            <Breadcrumb.Item>Category</Breadcrumb.Item>
+            <Breadcrumb.Item>Subcategory</Breadcrumb.Item>
           </Breadcrumb>
           <div
             style={{
@@ -49,7 +51,7 @@ function App() {
         </Content>
         <Footer
           style={{
-            textAlign: 'center',
+            textAlign: "center",
           }}
         >
           Ant Design ©{new Date().getFullYear()} Created by Ant UED

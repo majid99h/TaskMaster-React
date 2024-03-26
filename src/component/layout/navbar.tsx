@@ -1,45 +1,44 @@
-import { useState } from 'react';
-import { Layout, Menu } from 'antd';
+import { useState } from "react";
+import { Layout, Menu } from "antd";
 import {
   DashboardOutlined,
   ProjectOutlined,
-  TeamOutlined,
   OrderedListOutlined,
   SettingOutlined,
-} from '@ant-design/icons';
-import { useNavigate } from 'react-router-dom';
+} from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
+import { JSX } from "react/jsx-runtime";
 
 const { Sider } = Layout;
-function getItem(label: any, key: any, icon: any, children: any = null) {
+const getItem = (
+  label: string,
+  key: string,
+  icon: JSX.Element | null,
+  children: unknown = null
+) => {
   return {
     key,
     icon,
     children,
     label,
   };
-}
+};
 const items = [
-  getItem('DashBoard', '/', <DashboardOutlined />),
-  getItem('Setting', 'Setting', <SettingOutlined />, [
-    getItem('Role', '/project/overview', null),
-    getItem('Screen', '/Project/myproject', null),
-    getItem('Screen Right', '/project/createproject', null),
-    getItem('User', '/project/createproject', null),
+  getItem("DashBoard", "/", <DashboardOutlined />),
+  getItem("Setting", "Setting", <SettingOutlined />, [
+    getItem("Role", "/Setting/role", null),
+    getItem("Screen", "/Setting/screen", null),
+    getItem("Screen Right", "/Setting/screenright", null),
+    getItem("User", "/Setting/user", null),
   ]),
-  getItem('Project', 'Project', <ProjectOutlined />, [
-    getItem('Overview', '/project/overview', null),
-    getItem('My Project', '/Project/myproject', null),
-    getItem('New Project', '/project/createproject', null),
+  getItem("Project", "Project", <ProjectOutlined />, [
+    getItem("My Project", "/Project", null),
+    getItem("New Project", "/project/create", null),
   ]),
-  getItem('Team', 'Team', <TeamOutlined />, [
-    getItem('Overview', '/Team/overview', null),
-    getItem('My Team', '/Team/myteam', null),
-    getItem('New Team', '/Team/createteam', null),
-    getItem('Member', '/Team/createmember', null),
-  ]),
-  getItem('Task', 'Task', <OrderedListOutlined />, [
-    getItem('Tasks', '/Team/overview', null),
-    getItem('New Task', '/Team/createmember', null),
+
+  getItem("Task", "Task", <OrderedListOutlined />, [
+    getItem("Tasks", "/Task/overview", null),
+    getItem("New Task", "/Task/createmember", null),
   ]),
 ];
 
@@ -49,7 +48,7 @@ const NavBar = () => {
   return (
     <div
       style={{
-        display: 'inline-flex',
+        display: "inline-flex",
       }}
     >
       <Sider
@@ -63,7 +62,7 @@ const NavBar = () => {
             navigate(key);
           }}
           theme="dark"
-          defaultSelectedKeys={['1']}
+          defaultSelectedKeys={["1"]}
           mode="inline"
           items={items}
         />
