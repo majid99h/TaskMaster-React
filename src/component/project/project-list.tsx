@@ -3,7 +3,7 @@ import { Table, Button } from "antd";
 import type { TableColumnsType } from "antd";
 import { format } from "date-fns";
 import { CheckCircleOutlined, FileDoneOutlined } from "@ant-design/icons";
-import Project from "../../pages/interface/project";
+import Project from "../../interface/project";
 import { useNavigate } from "react-router-dom";
 
 const ProjectList = () => {
